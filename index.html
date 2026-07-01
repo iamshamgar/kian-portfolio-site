@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Architecture student portfolio">
+  <title>Portfolio</title>
+
+  <!-- Fonts: Cormorant Garamond (headings) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <nav id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+
+      <div class="nav-brand">
+        <a href="#" class="nav-name" id="nav-name">Portfolio</a>
+        <span class="nav-school" id="nav-school"></span>
+      </div>
+
+      <button
+        class="nav-hamburger"
+        id="nav-hamburger"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="nav-links"
+      >
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#work" class="nav-link">Work</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+  <main id="top">
+
+    <!-- ===================== HERO ===================== -->
+    <section id="hero" aria-label="Introduction">
+      <div class="hero-inner">
+        <h1 class="hero-name" id="hero-name"></h1>
+        <p class="hero-tagline" id="hero-tagline"></p>
+        <p class="hero-school" id="hero-school"></p>
+        <a href="#work" class="hero-cta" aria-label="Scroll to selected work">
+          Selected Work <span class="hero-cta-arrow" aria-hidden="true">&#8595;</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===================== WORK ===================== -->
+    <section id="work" aria-label="Selected work">
+      <div class="section-inner">
+
+        <div class="section-header">
+          <h2 class="section-title">Selected Work</h2>
+          <div class="filter-bar" id="filter-bar" role="group" aria-label="Filter projects by category">
+            <!-- JS populates filter buttons -->
+          </div>
+        </div>
+
+        <div class="projects-grid" id="projects-grid">
+          <!-- JS populates project cards -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about" aria-label="About">
+      <div class="section-inner">
+        <div class="about-layout">
+
+          <div class="about-photo-col">
+            <div class="about-photo" id="about-photo">
+              <!-- JS inserts <img> or placeholder -->
+            </div>
+          </div>
+
+          <div class="about-text-col">
+            <p class="about-label">About</p>
+            <h2 class="about-name" id="about-name"></h2>
+            <p class="about-school" id="about-school"></p>
+            <p class="about-year" id="about-year"></p>
+            <p class="about-bio" id="about-bio"></p>
+            <p class="about-available">Currently accepting internship inquiries.</p>
+            <div class="about-links" id="about-links">
+              <!-- JS inserts links -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section id="contact" aria-label="Contact">
+      <div class="section-inner">
+        <div class="contact-inner">
+          <h2 class="contact-heading">Get in touch.</h2>
+          <a href="#" class="contact-email" id="contact-email"></a>
+          <p class="contact-note">Open to internship opportunities and collaborations.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <span id="footer-name"></span>
+      <span class="footer-sep" aria-hidden="true">&middot;</span>
+      <span id="footer-year"></span>
+      <span class="footer-sep" aria-hidden="true">&middot;</span>
+      <span class="footer-credit">Built with care.</span>
+    </div>
+  </footer>
+
+  <!-- ===================== MODAL ===================== -->
+  <div
+    id="modal"
+    class="modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-title"
+    aria-hidden="true"
+  >
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+
+    <div class="modal-container" role="document">
+
+      <button class="modal-close" id="modal-close" aria-label="Close project">
+        <span aria-hidden="true">&times;</span>
+      </button>
+
+      <div class="modal-body">
+
+        <!-- Left: Image carousel -->
+        <div class="modal-media">
+          <div class="modal-main-image-wrap">
+            <img
+              src=""
+              alt=""
+              class="modal-main-image"
+              id="modal-main-image"
+              loading="lazy"
+            >
+            <div class="modal-image-placeholder" id="modal-image-placeholder" aria-hidden="true"></div>
+            <button class="modal-arrow modal-arrow--prev" id="modal-prev" aria-label="Previous image">
+              <span aria-hidden="true">&#8249;</span>
+            </button>
+            <button class="modal-arrow modal-arrow--next" id="modal-next" aria-label="Next image">
+              <span aria-hidden="true">&#8250;</span>
+            </button>
+            <div class="modal-image-counter" id="modal-image-counter" aria-live="polite"></div>
+          </div>
+          <div class="modal-thumbnails" id="modal-thumbnails" role="list">
+            <!-- JS populates thumbnails -->
+          </div>
+        </div>
+
+        <!-- Right: Project info -->
+        <div class="modal-info">
+          <p class="modal-info-label">Project</p>
+          <h2 class="modal-title" id="modal-title"></h2>
+          <p class="modal-subtitle" id="modal-subtitle"></p>
+          <div class="modal-tags" id="modal-tags" aria-label="Project categories">
+            <!-- JS populates tags -->
+          </div>
+          <div class="modal-meta">
+            <span class="modal-meta-label">Year</span>
+            <span class="modal-year" id="modal-year"></span>
+          </div>
+          <p class="modal-description" id="modal-description"></p>
+          <a
+            href=""
+            target="_blank"
+            rel="noopener noreferrer"
+            class="modal-video-link"
+            id="modal-video-link"
+            style="display:none"
+          >
+            Watch Video <span aria-hidden="true">&#8599;</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Data layer must load BEFORE main.js -->
+  <script src="data/projects.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
