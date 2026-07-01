@@ -86,7 +86,7 @@ Everything — filtering, the project popup, the image carousel — works on you
 
 ## 6. Hosting Options
 
-When you're ready to put the site online, you can upload the entire `son-portfolio/` folder to any of these free static hosting services:
+When you're ready to put the site online, you can upload the entire `kian-portfolio-site/` folder to any of these free static hosting services:
 
 | Service | How |
 |---|---|
