@@ -84,17 +84,13 @@ Everything — filtering, the project popup, the image carousel — works on you
 
 ---
 
-## 6. Hosting Options
+## 6. Where the Site Lives Online
 
-When you're ready to put the site online, you can upload the entire `kian-portfolio-site/` folder to any of these free static hosting services:
+The site is hosted (for free) on **GitHub Pages** — it lives in a GitHub repository, and every time changes are pushed there, the live site updates itself within a minute or two. So "publishing" is just saving your changes and pushing (or asking Claude to *"save and publish my changes"* — it handles it).
 
-| Service | How |
-|---|---|
-| **Netlify** | Drag the folder onto netlify.com/drop |
-| **Vercel** | Connect your GitHub repo at vercel.com |
-| **GitHub Pages** | Push to a GitHub repo and enable Pages in Settings |
+The site's home address is **kianliao.com** (with a `KIANS-USERNAME.github.io/portfolio` address as the behind-the-scenes original). The one-time setup for all of this is in the laptop setup sheet from your dad — you don't need to redo any of it here.
 
-All three are free for personal portfolios and give you a URL immediately. You can then connect a custom domain (like `yourname.com`) for around $12/year.
+*(Other free hosts exist — Netlify, Vercel — and this folder would work on any of them, but GitHub Pages is the one we use.)*
 
 ---
 

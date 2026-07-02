@@ -26,18 +26,18 @@ The personal portfolio website of **Kian**, an undergraduate architecture studen
 ## "Publish" / "save my changes"
 When Kian says publish, save, or anything similar, pick the route that's actually set up — check in this order:
 
-**Route 1 — GitHub (if `git remote -v` shows an `origin` remote):**
+**Route 1 — GitHub Pages (if `git remote -v` shows an `origin` remote). This is the normal route: the site is hosted on GitHub Pages, so `git push` IS the deploy — pushing to `main` publishes the live site, no separate deploy step exists.**
 1. `git add -A`
 2. `git commit -m "<short plain-English description, e.g. Add Threshold House project>"`
 3. `git push`
-4. Confirm in plain language: "Saved and published — the live site updates in about a minute."
+4. Confirm in plain language: "Saved and published — the live site updates within a minute or two."
 
 If push fails (offline, sign-in needed), say so simply and tell him his work is safely saved on the laptop and will publish next time.
 
-**Route 2 — Netlify CLI (no git remote, but the folder is Netlify-linked: `.netlify/state.json` exists or `netlify status` succeeds):**
+**Route 2 — Netlify CLI, fallback only (no git remote, but the folder is Netlify-linked: `.netlify/state.json` exists or `netlify status` succeeds):**
 1. `netlify deploy --prod --dir . --no-build`
 2. Confirm in plain language: "Published — your live site is updated now," and include the live URL from the deploy output.
 
-If the deploy fails (offline, login expired), say so simply: his work is safely saved on the laptop (and syncs to Google Drive automatically); try publishing again later, or run `netlify login` if it asks him to sign in.
+If the deploy fails (offline, login expired), say so simply: his work is safely saved on the laptop; try publishing again later, or run `netlify login` if it asks him to sign in.
 
 **Neither?** Don't guess or run anything. Tell Kian in plain language: "Your changes are saved on the laptop, but this folder isn't hooked up to publishing yet — that's a one-time setup step. Check the setup sheet from your dad (Part C of the laptop setup guide), or ask him to do it with you."
