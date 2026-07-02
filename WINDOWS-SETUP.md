@@ -1,8 +1,8 @@
 # Setting Up Your Portfolio on Windows
 
-One-time setup, about 20–30 minutes. After this, updating and publishing your site takes less than 5 minutes and is entirely point-and-click.
+One-time setup, about 30–40 minutes. After this, updating and publishing your site takes less than 5 minutes and is entirely point-and-click.
 
-There's one moment in the middle where you hand your laptop to your dad for about 2 minutes. Everything else is yours to do.
+There are two short moments where you hand things off to your dad. Everything else is yours to do.
 
 ---
 
@@ -87,7 +87,61 @@ Click it and you'll see the site.
 
 ---
 
-## Part 6 — Your Day-to-Day Workflow
+## Part 6 — Connect kianliao.com to Your Site
+
+Right now your site lives at a long GitHub address. This part makes it live at **kianliao.com** instead. It takes about 10 minutes of clicking, then a waiting period of up to a few hours while the internet catches up.
+
+There's a second dad hand-off here — it's a 2-minute task in the Cloudflare account where the domain was purchased.
+
+### Step 1: Tell GitHub about your domain
+
+1. Go to your repo on GitHub → **Settings** → **Pages** (left sidebar).
+2. Under **Custom domain**, type `kianliao.com` and click **Save**.
+3. GitHub automatically adds a file called `CNAME` to your repo. Leave it alone — it's how GitHub remembers which domain belongs to your site.
+
+### Step 2 — Dad's step: add DNS records in Cloudflare (~ 2 minutes)
+
+*Kian: hand this to your dad. He logs into the Cloudflare account where kianliao.com was registered.*
+
+**Dad:** log into [dash.cloudflare.com](https://dash.cloudflare.com), click **kianliao.com**, then **DNS → Records**. Add these five records:
+
+| Type | Name | Value | Proxy |
+|------|------|-------|-------|
+| A | `@` | `185.199.108.153` | DNS only (grey) |
+| A | `@` | `185.199.109.153` | DNS only (grey) |
+| A | `@` | `185.199.110.153` | DNS only (grey) |
+| A | `@` | `185.199.111.153` | DNS only (grey) |
+| CNAME | `www` | `KIANS-USERNAME.github.io` | DNS only (grey) |
+
+Replace `KIANS-USERNAME` with Kian's actual GitHub username in the CNAME row.
+
+> **The grey cloud is critical.** Every record must be set to **DNS only** (grey cloud icon), not **Proxied** (orange cloud). With the orange cloud on, GitHub can't verify the domain or issue the HTTPS certificate — the site won't connect. Click the orange cloud to toggle it grey before saving each record.
+
+### Step 3: Wait, then enable HTTPS
+
+Back on the GitHub Pages settings page:
+
+1. Refresh every few minutes. When DNS is verified, a green checkmark appears next to `kianliao.com`. This usually takes a few minutes but can take up to a few hours.
+2. Once the **Enforce HTTPS** checkbox becomes clickable, tick it. (It may take up to 24 hours to appear — GitHub is issuing a security certificate. Usually much faster.)
+
+When both steps are done, `https://kianliao.com` is live and `www.kianliao.com` redirects there. The old `github.io` address redirects there too — nothing breaks.
+
+### Step 4: Sync the CNAME file to your laptop
+
+GitHub added a `CNAME` file to your repo in Step 1. Pull it down so your local copy stays in sync:
+
+Open PowerShell and run:
+
+```powershell
+cd ~\Documents\kian-portfolio-site
+git pull
+```
+
+Done. From this point on `publish.bat` still works exactly the same — nothing about publishing changes.
+
+---
+
+## Part 7 — Your Day-to-Day Workflow
 
 ### Editing your portfolio
 
@@ -116,9 +170,9 @@ No terminal. No commands to remember.
 
 ## Your Live Site
 
-**`https://KIANS-USERNAME.github.io/kian-portfolio-site/`**
+**`https://kianliao.com`**
 
-*(This will move to `kianliao.com` once the domain is connected — your dad is handling that separately.)*
+*(Before Part 6 is complete, the site is at `https://KIANS-USERNAME.github.io/kian-portfolio-site/` instead.)*
 
 ---
 
